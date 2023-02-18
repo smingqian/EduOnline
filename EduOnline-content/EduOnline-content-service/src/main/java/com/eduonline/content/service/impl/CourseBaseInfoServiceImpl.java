@@ -10,6 +10,7 @@ import com.eduonline.content.model.po.CourseBase;
 import com.eduonline.content.service.CourseBaseInfoService;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
@@ -19,6 +20,7 @@ import java.util.List;
  * @description TODO
  * @date 2/17/2023 10:26 PM
  */
+@Service
 public class CourseBaseInfoServiceImpl implements CourseBaseInfoService {
     @Autowired
     CourseBaseMapper courseBaseMapper;

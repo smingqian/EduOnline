@@ -99,5 +99,18 @@
         </dependency>
 
     </dependencies>
-
+<!--  跳过可执行jar打包
+  <build>
+        <plugins>
+        &lt;!&ndash;打包插件&ndash;&gt;
+        <plugin>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-maven-plugin</artifactId>
+            <configuration>
+                <skip>true</skip>
+            </configuration>
+        </plugin>
+        </plugins>
+    </build>
+  -->
 </project>

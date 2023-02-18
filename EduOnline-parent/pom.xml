@@ -21,6 +21,7 @@
     <modules>
         <module>../EduOnline-base</module>
         <module>../EduOnline-content</module>
+        <module>../EduOnline-system</module>
     </modules>
 
 
