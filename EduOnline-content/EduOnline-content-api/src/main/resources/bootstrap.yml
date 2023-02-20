@@ -6,6 +6,8 @@ server:
 spring:
   application:
     name: content-api
+#  profiles:
+#    active: service
 
 # 日志文件配置路径
 logging:

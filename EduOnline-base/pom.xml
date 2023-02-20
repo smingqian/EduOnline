@@ -98,19 +98,32 @@
             <artifactId>jackson-datatype-jsr310</artifactId>
         </dependency>
 
+
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-log4j2</artifactId>
+        </dependency>
+
+
     </dependencies>
-<!--  跳过可执行jar打包
+
   <build>
         <plugins>
-        &lt;!&ndash;打包插件&ndash;&gt;
+        <!--打包插件-->
         <plugin>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-maven-plugin</artifactId>
             <configuration>
                 <skip>true</skip>
+<!--                跳过可执行jar打包-->
             </configuration>
         </plugin>
         </plugins>
     </build>
-  -->
 </project>

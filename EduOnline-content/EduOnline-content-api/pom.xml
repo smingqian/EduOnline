@@ -16,6 +16,8 @@
 	<description>EduOnline-content-api</description>
 
 	<dependencies>
+
+
 		<dependency>
 			<groupId>com.eduonline</groupId>
 			<artifactId>EduOnline-content-model</artifactId>
@@ -26,6 +28,7 @@
 			<artifactId>EduOnline-content-service</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
+
 		<!--cloud的基础环境包-->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>

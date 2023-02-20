@@ -2,6 +2,8 @@ package com.eduonline.content.api;
 
 import com.eduonline.base.model.PageParams;
 import com.eduonline.base.model.PageResult;
+import com.eduonline.content.model.dto.AddCourseDto;
+import com.eduonline.content.model.dto.CourseBaseInfoDto;
 import com.eduonline.content.model.dto.QueryCourseParamsDto;
 import com.eduonline.content.model.po.CourseBase;
 import com.eduonline.content.service.CourseBaseInfoService;
@@ -28,8 +30,16 @@ public class CourseBaseInfoController {
     @ApiOperation("课程查询")
     @PostMapping("/course/list")
     public PageResult<CourseBase> list(PageParams pageParams, @RequestBody QueryCourseParamsDto queryCourseParamsDto) {
-        PageResult<CourseBase> courseBasePageResult = courseBaseInfoService.QueryCourseBaseList(pageParams, queryCourseParamsDto);
+        PageResult<CourseBase> courseBasePageResult = courseBaseInfoService.queryCourseBaseList(pageParams, queryCourseParamsDto);
         return courseBasePageResult;
     }
 
+
+    @ApiOperation("新增课程基础信息")
+    @PostMapping("/course")
+    public CourseBaseInfoDto createCourseBase(@RequestBody AddCourseDto addCourseDto) {
+        //机构id，由于认证系统没有上线暂时硬编码
+        Long companyId = 22L;
+        return courseBaseInfoService.createCourseBase(companyId, addCourseDto);
+    }
 }

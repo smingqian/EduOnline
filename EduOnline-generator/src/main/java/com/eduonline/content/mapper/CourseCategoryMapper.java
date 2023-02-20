@@ -1,16 +1,16 @@
 package com.eduonline.content.mapper;
 
-import com.eduonline.content.model.po.TeachplanMedia;
+import com.eduonline.content.model.po.CourseCategory;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.springframework.stereotype.Repository;
 
 /**
  * <p>
- *  Mapper 接口
+ * 课程分类 Mapper 接口
  * </p>
  *
  * @author qsun
  */
-public interface TeachplanMediaMapper extends BaseMapper<TeachplanMedia> {
+public interface CourseCategoryMapper extends BaseMapper<CourseCategory> {
 
 }

@@ -1,4 +1,4 @@
-package com.eduonline.content;
+package com.eduonline;
 
 import com.spring4all.swagger.EnableSwagger2Doc;
 import org.springframework.boot.SpringApplication;
@@ -12,3 +12,6 @@ public class EduOnlineContentApiApplication {
 	}
 
 }
+
+
+

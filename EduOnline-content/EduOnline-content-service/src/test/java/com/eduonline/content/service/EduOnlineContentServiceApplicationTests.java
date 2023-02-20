@@ -30,7 +30,7 @@ class EduOnlineContentServiceApplicationTests {
         queryCourseParamsDto.setCourseName("测试课程01");
 //        queryCourseParamsDto.setAuditStatus("203002");
 //        queryCourseParamsDto.setPublishStatus();
-        PageResult<CourseBase> courseBasePageResult = courseBaseInfoService.QueryCourseBaseList(new PageParams(1, 10), queryCourseParamsDto);
+        PageResult<CourseBase> courseBasePageResult = courseBaseInfoService.queryCourseBaseList(new PageParams(1, 10), queryCourseParamsDto);
         System.out.println(courseBasePageResult);
     }
 

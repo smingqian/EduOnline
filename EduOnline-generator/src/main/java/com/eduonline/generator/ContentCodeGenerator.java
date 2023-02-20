@@ -21,7 +21,7 @@ public class ContentCodeGenerator {
 	//数据库账号
 	private static final String DATA_SOURCE_USER_NAME  = "root";
 	//数据库密码
-	private static final String DATA_SOURCE_PASSWORD  = "123456";
+	private static final String DATA_SOURCE_PASSWORD  = "mingqian";
 	//生成的表
 	private static final String[] TABLE_NAMES = new String[]{
 //			"mq_message",
@@ -33,7 +33,7 @@ public class ContentCodeGenerator {
 			 "course_teacher",
 //			 "course_publish",
 //			 "course_publish_pre"
-//			"course_category"
+			"course_category"
 	};
 
 	// TODO 默认生成entity，需要生成DTO修改此变量
@@ -49,8 +49,8 @@ public class ContentCodeGenerator {
 		GlobalConfig gc = new GlobalConfig();
 		gc.setFileOverride(true);
 		//生成路径
-		gc.setOutputDir(System.getProperty("user.dir") + "/xuecheng-plus-generator/src/main/java");
-		gc.setAuthor("itcast");
+		gc.setOutputDir(System.getProperty("user.dir") + "/eduonline-generator/src/main/java");
+		gc.setAuthor("qsun");
 		gc.setOpen(false);
 		gc.setSwagger2(false);
 		gc.setServiceName("%sService");
@@ -77,7 +77,7 @@ public class ContentCodeGenerator {
 		// 包配置
 		PackageConfig pc = new PackageConfig();
 		pc.setModuleName(SERVICE_NAME);
-		pc.setParent("com.xuecheng");
+		pc.setParent("com.eduonline");
 
 		pc.setServiceImpl("service.impl");
 		pc.setXml("mapper");

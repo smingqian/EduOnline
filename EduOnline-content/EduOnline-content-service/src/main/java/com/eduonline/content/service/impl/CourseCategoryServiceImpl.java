@@ -1,0 +1,50 @@
+package com.eduonline.content.service.impl;
+
+import com.eduonline.content.mapper.CourseCategoryMapper;
+import com.eduonline.content.model.dto.CourseCategoryTreeDto;
+import com.eduonline.content.service.CourseBaseInfoService;
+import com.eduonline.content.service.CourseCategoryService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
+/**
+ * @author qsun
+ * @version 1.0
+ * @description TODO
+ * @date 2/20/2023 11:20 AM
+ */
+@Service
+public class CourseCategoryServiceImpl implements CourseCategoryService {
+    @Autowired
+    CourseCategoryMapper courseCategoryMapper;
+
+    @Override
+    public List<CourseCategoryTreeDto> queryTreeNodes(String id) {
+        List<CourseCategoryTreeDto> courseCategoryTreeDtoList = courseCategoryMapper.selectTreeNodes(id);
+        //最终返回的列表
+        List<CourseCategoryTreeDto> categoryTreeDtos = new ArrayList<>();
+        HashMap<String, CourseCategoryTreeDto> mapTemp = new HashMap<>();
+
+        courseCategoryTreeDtoList.stream().forEach(item -> {
+            mapTemp.put(item.getId(), item);
+            //只将根节点的下级节点放入list
+            if (item.getParentid().equals(id)) {
+                categoryTreeDtos.add(item);
+            }
+            CourseCategoryTreeDto courseCategoryTreeDto = mapTemp.get(item.getParentid());
+            if (courseCategoryTreeDto != null) {
+                if (courseCategoryTreeDto.getChildrenTreeNodes() == null) {
+                    courseCategoryTreeDto.setChildrenTreeNodes(new ArrayList<CourseCategoryTreeDto>());
+                }
+                //向节点的下级节点list加入节点
+                courseCategoryTreeDto.getChildrenTreeNodes().add(item);
+            }
+
+        });
+        return categoryTreeDtos;
+    }
+}
