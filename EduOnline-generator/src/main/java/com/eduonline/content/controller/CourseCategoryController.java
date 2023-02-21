@@ -21,5 +21,5 @@ import org.springframework.beans.factory.annotation.Autowired;
 public class CourseCategoryController {
 
     @Autowired
-    private CourseCategoryService  courseCategoryService;
+    private CourseCategoryService courseCategoryService;
 }

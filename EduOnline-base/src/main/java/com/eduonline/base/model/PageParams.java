@@ -26,11 +26,11 @@ public class PageParams {
     //每页记录数默认值
     private Long pageSize = DEFAULT_PAGE_SIZE;
 
-    public PageParams(){
+    public PageParams() {
 
     }
 
-    public PageParams(long pageNo,long pageSize){
+    public PageParams(long pageNo, long pageSize) {
         this.pageNo = pageNo;
         this.pageSize = pageSize;
     }

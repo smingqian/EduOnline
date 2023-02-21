@@ -1,0 +1,33 @@
+###
+POST http://{{content_host}}/content/course/list?
+
+<> 2023-02-18T173248.400.json
+
+###
+GET http://{{content_host}}/content/course-category/tree-nodes
+
+
+
+###
+POST http://{{content_host}}/content/course
+Content-Type: application/json
+
+{
+  "charge": "",
+  "price": 0,
+  "originalPrice": 0,
+  "qq": "22333",
+  "wechat": "223344",
+  "phone": "13333333",
+  "validDays": 365,
+  "mt": "1-1",
+  "st": "1-1-1",
+  "name": "",
+  "pic": "",
+  "teachmode": "200002",
+  "users": "初级人员",
+  "tags": "",
+  "grade": "204001",
+  "description": "",
+  "objectives": ""
+}

@@ -22,8 +22,9 @@ public class CourseCategoryController {
 
     @Autowired
     CourseCategoryService courseCategoryService;
+
     @GetMapping("/course-category/tree-nodes")
-    public List<CourseCategoryTreeDto> queryTreeNode(@RequestParam(value = "id",defaultValue = "1") String id){
+    public List<CourseCategoryTreeDto> queryTreeNode(@RequestParam(value = "id", defaultValue = "1") String id) {
         return courseCategoryService.queryTreeNodes(id);
     }
 

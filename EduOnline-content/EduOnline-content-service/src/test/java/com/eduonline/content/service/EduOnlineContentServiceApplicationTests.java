@@ -19,13 +19,13 @@ class EduOnlineContentServiceApplicationTests {
     CourseBaseInfoService courseBaseInfoService;
 
     @Test
-    void testCourseBaseMapper(){
+    void testCourseBaseMapper() {
         CourseBase courseBase = courseBaseMapper.selectById(2);
         System.out.println(courseBase);
     }
 
     @Test
-    void testQueryCourseBaseList(){
+    void testQueryCourseBaseList() {
         QueryCourseParamsDto queryCourseParamsDto = new QueryCourseParamsDto();
         queryCourseParamsDto.setCourseName("测试课程01");
 //        queryCourseParamsDto.setAuditStatus("203002");

@@ -10,7 +10,6 @@
     </parent>
 
 
-
     <groupId>com.eduonline</groupId>
     <artifactId>EduOnline-parent</artifactId>
     <version>0.0.1-SNAPSHOT</version>
@@ -23,7 +22,6 @@
         <module>../EduOnline-content</module>
         <module>../EduOnline-system</module>
     </modules>
-
 
 
     <properties>
@@ -236,11 +234,11 @@
         </resources>
         <plugins>
             <!--打包插件-->
-<!--            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <version>${spring-boot.version}</version>
-            </plugin>-->
+            <!--            <plugin>
+                            <groupId>org.springframework.boot</groupId>
+                            <artifactId>spring-boot-maven-plugin</artifactId>
+                            <version>${spring-boot.version}</version>
+                        </plugin>-->
 
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

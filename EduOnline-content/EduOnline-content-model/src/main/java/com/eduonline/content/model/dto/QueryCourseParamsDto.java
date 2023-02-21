@@ -15,7 +15,7 @@ import lombok.ToString;
 public class QueryCourseParamsDto {
     //审核状态
     @ApiModelProperty("审核状态")
-    private   String auditStatus;
+    private String auditStatus;
     //课程名称
     @ApiModelProperty("课程名称")
     private String courseName;

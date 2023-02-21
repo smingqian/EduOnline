@@ -21,5 +21,5 @@ import org.springframework.beans.factory.annotation.Autowired;
 public class CourseBaseController {
 
     @Autowired
-    private CourseBaseService  courseBaseService;
+    private CourseBaseService courseBaseService;
 }

@@ -6,7 +6,7 @@
         <groupId>com.eduonline</groupId>
         <artifactId>EduOnline-content</artifactId>
         <version>0.0.1-SNAPSHOT</version>
-<!--        <relativePath>../../EduOnline-content</relativePath>-->
+        <!--        <relativePath>../../EduOnline-content</relativePath>-->
         <relativePath>../pom.xml</relativePath>
     </parent>
 

@@ -10,7 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 /**
  * <p>
- *  前端控制器
+ * 前端控制器
  * </p>
  *
  * @author qsun
@@ -21,5 +21,5 @@ import org.springframework.beans.factory.annotation.Autowired;
 public class TeachplanMediaController {
 
     @Autowired
-    private TeachplanMediaService  teachplanMediaService;
+    private TeachplanMediaService teachplanMediaService;
 }

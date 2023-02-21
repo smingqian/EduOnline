@@ -21,5 +21,5 @@ import org.springframework.beans.factory.annotation.Autowired;
 public class CourseMarketController {
 
     @Autowired
-    private CourseMarketService  courseMarketService;
+    private CourseMarketService courseMarketService;
 }

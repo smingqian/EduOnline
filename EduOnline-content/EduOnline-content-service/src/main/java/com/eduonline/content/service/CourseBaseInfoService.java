@@ -17,20 +17,20 @@ import org.springframework.web.bind.annotation.RequestBody;
  */
 
 /**
-* @description 课程查询
-* @param 分页参数 、 课程参数
-* @return
-* @author qsun
-* @date 2/17/2023 10:25 PM
-*/
+ * @param 分页参数 、 课程参数
+ * @author qsun
+ * @description 课程查询
+ * @return
+ * @date 2/17/2023 10:25 PM
+ */
 @Service
 public interface CourseBaseInfoService {
     PageResult<CourseBase> queryCourseBaseList(PageParams pageParams, @RequestBody QueryCourseParamsDto queryCourseParamsDto);
 
     /**
+     * @param companyId    教学机构id
+     * @param addCourseDto 课程基本信息
      * @description 添加课程基本信息
-     * @param companyId  教学机构id
-     * @param addCourseDto  课程基本信息
      */
     CourseBaseInfoDto createCourseBase(Long companyId, AddCourseDto addCourseDto);
 

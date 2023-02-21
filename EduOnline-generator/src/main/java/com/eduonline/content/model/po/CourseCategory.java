@@ -1,6 +1,7 @@
 package com.eduonline.content.model.po;
 
 import java.io.Serializable;
+
 import lombok.Data;
 import com.baomidou.mybatisplus.annotation.TableName;
 
