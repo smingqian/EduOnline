@@ -4,6 +4,7 @@ import com.eduonline.base.model.PageParams;
 import com.eduonline.base.model.PageResult;
 import com.eduonline.content.model.dto.AddCourseDto;
 import com.eduonline.content.model.dto.CourseBaseInfoDto;
+import com.eduonline.content.model.dto.EditCourseDto;
 import com.eduonline.content.model.dto.QueryCourseParamsDto;
 import com.eduonline.content.model.po.CourseBase;
 import org.springframework.stereotype.Service;
@@ -25,6 +26,7 @@ import org.springframework.web.bind.annotation.RequestBody;
  */
 @Service
 public interface CourseBaseInfoService {
+
     PageResult<CourseBase> queryCourseBaseList(PageParams pageParams, @RequestBody QueryCourseParamsDto queryCourseParamsDto);
 
     /**
@@ -33,5 +35,9 @@ public interface CourseBaseInfoService {
      * @description 添加课程基本信息
      */
     CourseBaseInfoDto createCourseBase(Long companyId, AddCourseDto addCourseDto);
+
+    public CourseBaseInfoDto getCourseBaseInfo(long courseId);
+
+    CourseBaseInfoDto updateCourseBase(Long companyId, EditCourseDto dto);
 
 }

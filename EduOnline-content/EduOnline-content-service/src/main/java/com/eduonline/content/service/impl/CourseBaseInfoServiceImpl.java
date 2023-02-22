@@ -10,6 +10,7 @@ import com.eduonline.content.mapper.CourseCategoryMapper;
 import com.eduonline.content.mapper.CourseMarketMapper;
 import com.eduonline.content.model.dto.AddCourseDto;
 import com.eduonline.content.model.dto.CourseBaseInfoDto;
+import com.eduonline.content.model.dto.EditCourseDto;
 import com.eduonline.content.model.dto.QueryCourseParamsDto;
 import com.eduonline.content.model.po.CourseBase;
 import com.eduonline.content.model.po.CourseCategory;
@@ -39,7 +40,8 @@ public class CourseBaseInfoServiceImpl implements CourseBaseInfoService {
 
     @Autowired
     CourseMarketMapper courseMarketMapper;
-
+    @Autowired
+    CourseMarketServiceImpl courseMarketService;
     @Override
     public PageResult<CourseBase> queryCourseBaseList(PageParams pageParams, QueryCourseParamsDto queryCourseParamsDto) {
         //构建查询条件对象
@@ -171,5 +173,60 @@ public class CourseBaseInfoServiceImpl implements CourseBaseInfoService {
 
         return courseBaseInfoDto;
 
+    }
+
+    @Transactional
+    @Override
+    public CourseBaseInfoDto updateCourseBase(Long companyId, EditCourseDto dto) {
+        Long id = dto.getId();
+        CourseBase courseBase = courseBaseMapper.selectById(id);
+        if (courseBase == null) {
+            EduOnlineException.cast("课程不存在");
+        }
+        if (!courseBase.getCompanyId().equals(companyId)){
+            EduOnlineException.cast("本机构只能修改本机构的课程");
+        }
+        //修改基础课程信息
+        BeanUtils.copyProperties(dto,courseBase);
+        courseBase.setChangeDate(LocalDateTime.now());
+        courseBaseMapper.updateById(courseBase);
+
+        //修改营销数据
+        CourseMarket courseMarket = courseMarketMapper.selectById(id);
+        if(courseMarket==null){
+            courseMarket = new CourseMarket();
+        }
+        //将dto中的课程营销信息拷贝至courseMarket对象中
+        BeanUtils.copyProperties(dto,courseMarket);
+
+/*
+        courseMarket.setCharge(dto.getCharge());
+        String charge = dto.getCharge();
+        if(charge.equals("201001")){
+            Float price = dto.getPrice();
+            if(price == null || price.floatValue()<=0){
+                EduOnlineException.cast("课程设置了收费价格不能为空且必须大于0");
+            }
+        }
+        boolean save = courseMarketService.saveOrUpdate(courseMarket);
+*/
+        saveCourseMarket(courseMarket);
+        return getCourseBaseInfo(id);
+    }
+
+
+    public  int saveCourseMarket(CourseMarket courseMarket){
+        String charge = courseMarket.getCharge();
+        if(StringUtils.isBlank(charge)){
+            EduOnlineException.cast("请设置收费规则");
+        }
+        if(charge.equals("201001")){
+            Float price = courseMarket.getPrice();
+            if(price == null || price.floatValue()<=0){
+                EduOnlineException.cast("课程设置了收费价格不能为空且必须大于0");
+            }
+        }
+        boolean b = courseMarketService.saveOrUpdate(courseMarket);
+        return b?1:-1;
     }
 }

@@ -41,7 +41,7 @@ public class LearningCodeGenerator {
         gc.setFileOverride(true);
         //生成路径
         gc.setOutputDir(System.getProperty("user.dir") + "/eduonline-generator/src/main/java");
-        gc.setAuthor("itcast");
+        gc.setAuthor("qsun");
         gc.setOpen(false);
         gc.setSwagger2(false);
         gc.setServiceName("%sService");
@@ -68,7 +68,7 @@ public class LearningCodeGenerator {
         // 包配置
         PackageConfig pc = new PackageConfig();
         pc.setModuleName(SERVICE_NAME);
-        pc.setParent("com.xuecheng");
+        pc.setParent("com.eduonline");
 
         pc.setServiceImpl("service.impl");
         pc.setXml("mapper");

@@ -8,7 +8,7 @@ import com.eduonline.content.model.po.CourseMarket;
  * 课程营销信息 Mapper 接口
  * </p>
  *
- * @author itcast
+ * @author qsun
  */
 public interface CourseMarketMapper extends BaseMapper<CourseMarket> {
 

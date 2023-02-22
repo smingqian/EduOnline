@@ -37,7 +37,7 @@ public class BankCodeGenerator {
         GlobalConfig gc = new GlobalConfig();
         gc.setFileOverride(true);
         gc.setOutputDir(System.getProperty("user.dir") + "/eduonline-generator/src/main/java");
-        gc.setAuthor("itcast");
+        gc.setAuthor("qsun");
         gc.setOpen(false);
         gc.setSwagger2(false);
         gc.setServiceName("%sService");
@@ -62,7 +62,7 @@ public class BankCodeGenerator {
 
         // 包配置
         PackageConfig pc = new PackageConfig();
-        pc.setParent("com.xuecheng.rocketmq");
+        pc.setParent("com.eduonline.rocketmq");
 
         pc.setServiceImpl("service.impl");
         pc.setXml("mapper");

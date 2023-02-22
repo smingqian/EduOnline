@@ -39,7 +39,7 @@ public class CommonCodeGenerator {
         GlobalConfig gc = new GlobalConfig();
         gc.setFileOverride(true);
         gc.setOutputDir(System.getProperty("user.dir") + "/eduonline-generator/src/main/java");
-        gc.setAuthor("itcast");
+        gc.setAuthor("qsun");
         gc.setOpen(false);
         gc.setSwagger2(false);
         gc.setServiceName("%sService");
@@ -65,7 +65,7 @@ public class CommonCodeGenerator {
         // 包配置
         PackageConfig pc = new PackageConfig();
         pc.setModuleName(SERVICE_NAME);
-        pc.setParent("com.xuecheng");
+        pc.setParent("com.eduonline");
 
         pc.setServiceImpl("service.impl");
         pc.setXml("mapper");
