@@ -15,8 +15,8 @@ import java.util.List;
  */
 public interface TeachplanMapper extends BaseMapper<Teachplan> {
     /**
-     * @description 查询某课程的课程计划，组成树型结构
      * @param courseId
+     * @description 查询某课程的课程计划，组成树型结构
      */
     public List<TeachplanDto> selectTreeNodes(long courseId);
 }

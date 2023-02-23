@@ -10,7 +10,6 @@ import java.math.BigDecimal;
  * @author Mr.M
  * @version 1.0
  * @description 课程基本信息dto
- * @date 2022/9/7 17:44
  */
 @Data
 public class CourseBaseInfoDto extends CourseBase {

@@ -47,15 +47,16 @@ public class CourseBaseInfoController {
 
     @ApiOperation("根据课程id查询课程基础信息")
     @GetMapping("/course/{courseId}")
-    public CourseBaseInfoDto getCourseBaseById(@PathVariable Long courseId){
+    public CourseBaseInfoDto getCourseBaseById(@PathVariable Long courseId) {
         return courseBaseInfoService.getCourseBaseInfo(courseId);
     }
+
     @ApiOperation("修改课程基础信息")
     @PutMapping("/course")
-    public CourseBaseInfoDto modifyCourseBaseInfo(@RequestBody @Validated EditCourseDto editCourseDto){
+    public CourseBaseInfoDto modifyCourseBaseInfo(@RequestBody @Validated EditCourseDto editCourseDto) {
 
         Long companyId = 1232141425L;
-        return courseBaseInfoService.updateCourseBase(companyId,editCourseDto);
+        return courseBaseInfoService.updateCourseBase(companyId, editCourseDto);
     }
 
 }

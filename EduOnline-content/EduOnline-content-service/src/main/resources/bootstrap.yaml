@@ -1,0 +1,25 @@
+#spring:
+#  application:
+#    name: content-service
+##  datasource:
+##    driver-class-name: com.mysql.cj.jdbc.Driver
+##    url: jdbc:mysql://110.40.226.140:3306/xcplus_content?serverTimezone=UTC&userUnicode=true&useSSL=false&
+##    username: root
+##    password: mingqian
+## 日志文件配置路径
+#  profiles:
+#    active: dev
+#  cloud:
+#    nacos:
+#      server-addr: 110.40.226.140
+##      discovery:
+##        namespace: ${spring.profiles.active}
+##        group: EduOnline-project
+#      config:
+#        namespace: ${spring.profiles.active}
+#        group: EduOnline-project
+#        file-extension: yaml
+#        refresh-enabled: true
+#
+#logging:
+#  config: classpath:log4j2-dev.xml

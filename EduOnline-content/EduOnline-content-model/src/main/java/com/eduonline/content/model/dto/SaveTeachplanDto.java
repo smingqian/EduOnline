@@ -56,5 +56,4 @@ public class SaveTeachplanDto {
     private String isPreview;
 
 
-
 }

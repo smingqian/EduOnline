@@ -1,0 +1,45 @@
+#?????
+spring:
+  application:
+    name: media-api
+  profiles:
+    active: dev
+  cloud:
+    nacos:
+      server-addr: 110.40.226.140:8848
+      discovery:
+        namespace: ${spring.profiles.active}
+        group: EduOnline-project
+        username: nacos
+        password: mingqian
+      config:
+        namespace: ${spring.profiles.active}
+        group: EduOnline-project
+        file-extension: yaml
+        refresh-enabled: true
+        extension-configs:
+          - data-id: media-service-${spring.profiles.active}.yaml
+            group: EduOnline-project
+            refresh: true
+        shared-configs:
+          - data-id: swagger-${spring.profiles.active}.yaml
+            group: EduOnline-project
+            refresh: true
+          - data-id: logging-${spring.profiles.active}.yaml
+            group: EduOnline-project
+            refresh: true
+
+
+
+## ????????
+#logging:
+#  config: classpath:log4j2-dev.xml
+#
+#
+## swagger ????
+#swagger:
+#  title: "??????????"
+#  description: "???????????????????????"
+#  base-package: com.eduonline.content
+#  enabled: true
+#  version: 1.0.0

@@ -11,8 +11,8 @@ import lombok.Data;
  * @date 2/21/2023 4:32 PM
  */
 @Data
-@ApiModel(value="EditCourseDto", description="修改课程基本信息")
-public class EditCourseDto extends AddCourseDto{
-    @ApiModelProperty(value = "课程名称",required = true)
+@ApiModel(value = "EditCourseDto", description = "修改课程基本信息")
+public class EditCourseDto extends AddCourseDto {
+    @ApiModelProperty(value = "课程名称", required = true)
     private Long id;
 }

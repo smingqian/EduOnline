@@ -36,33 +36,34 @@ public class TeachPlanServiceImpl implements TeachPlanService {
         //课程计划id
         Long id = teachplanDto.getId();
         //修改课程计划
-        if(id!=null){
+        if (id != null) {
             Teachplan teachplan = teachplanMapper.selectById(id);
-            BeanUtils.copyProperties(teachplanDto,teachplan);
+            BeanUtils.copyProperties(teachplanDto, teachplan);
             teachplanMapper.updateById(teachplan);
-        }else{
+        } else {
             //取出同父同级别的课程计划数量
             int count = getTeachplanCount(teachplanDto.getCourseId(), teachplanDto.getParentid());
             Teachplan teachplanNew = new Teachplan();
             //设置排序号
-            teachplanNew.setOrderby(count+1);
-            BeanUtils.copyProperties(teachplanDto,teachplanNew);
+            teachplanNew.setOrderby(count + 1);
+            BeanUtils.copyProperties(teachplanDto, teachplanNew);
 
             teachplanMapper.insert(teachplanNew);
 
         }
 
     }
+
     /**
-     * @description 获取最新的排序号
-     * @param courseId  课程id
-     * @param parentId  父课程计划id
+     * @param courseId 课程id
+     * @param parentId 父课程计划id
      * @return int 最新排序号
+     * @description 获取最新的排序号
      */
-    private int getTeachplanCount(long courseId,long parentId){
+    private int getTeachplanCount(long courseId, long parentId) {
         LambdaQueryWrapper<Teachplan> queryWrapper = new LambdaQueryWrapper<>();
-        queryWrapper.eq(Teachplan::getCourseId,courseId);
-        queryWrapper.eq(Teachplan::getParentid,parentId);
+        queryWrapper.eq(Teachplan::getCourseId, courseId);
+        queryWrapper.eq(Teachplan::getParentid, parentId);
         Integer count = teachplanMapper.selectCount(queryWrapper);
         return count;
     }

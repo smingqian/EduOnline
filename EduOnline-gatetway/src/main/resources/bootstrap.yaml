@@ -1,0 +1,26 @@
+#?????
+spring:
+  application:
+    name: gateway
+  cloud:
+    nacos:
+      server-addr: 110.40.226.140:8848
+      discovery:
+        namespace: ${spring.profiles.active}
+        group: EduOnline-project
+        username: nacos
+        password: mingqian
+      config:
+        namespace: ${spring.profiles.active}
+        group: EduOnline-project
+        file-extension: yaml
+        refresh-enabled: true
+        shared-configs:
+          - data-id: logging-${spring.profiles.active}.yaml
+            group: EduOnline-project
+            refresh: true
+
+
+  profiles:
+    active: dev
+

@@ -13,7 +13,6 @@ import java.math.BigDecimal;
  * @author Mr.M
  * @version 1.0
  * @description 添加课程dto
- * @date 2022/9/7 17:40
  */
 @Data
 @ApiModel(value = "AddCourseDto", description = "新增课程基本信息")

@@ -13,12 +13,12 @@ import java.util.List;
  */
 public interface TeachPlanService {
     /**
-    * @description 查询课程计划树型结构
-    * @param null 
-    * @return
-    * @author qsun
-    * @date 2/22/2023 4:14 PM
-    */
+     * @param null
+     * @return
+     * @description 查询课程计划树型结构
+     * @author qsun
+     * @date 2/22/2023 4:14 PM
+     */
     public List<TeachplanDto> findTeachplayTree(long courseId);
 
     public void saveTeachplan(SaveTeachplanDto teachplanDto);
